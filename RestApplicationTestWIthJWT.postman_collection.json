@@ -1,0 +1,96 @@
+{
+	"variables": [],
+	"info": {
+		"name": "RestApplicationTest",
+		"_postman_id": "0a910d5d-f9cb-2591-60bf-fa85a5d1bb70",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:8080/api/transaction",
+			"request": {
+				"url": "http://localhost:8080/api/transaction",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"senderId\":\"sender@gmail.com\",\r\n\"receiverId\":\"receivedId@gmail.com\",\r\n\"amount\": 10.0\r\n}"
+				},
+				"description": "Post request to to do transaction"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/api/transactions",
+			"request": {
+				"url": "http://localhost:8080/api/transactions",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTY1NjA5ODYwNiwiaWF0IjoxNjU2MDYyNjA2fQ.G-hmZb9E4mQ6RNncedlgNAdURo3ufyezx8_PWWl_Ewc",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"userName\":\"admin\",\r\n\"password\":\"password\"\r\n}"
+				},
+				"description": "Get all transaction"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/api/transactions/sender@gmail.com",
+			"request": {
+				"url": "http://localhost:8080/api/transactions/sender@gmail.com",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"senderId\":\"sender@gmail.com\",\r\n\"receiverId\":\"receivedId@gmail.com\",\r\n\"amount\": 10.0\r\n}"
+				},
+				"description": "Get transaction by senderID"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/authenticate",
+			"request": {
+				"url": "http://localhost:8080/authenticate",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"userName\":\"admin\",\r\n\"password\":\"password\"\r\n}"
+				},
+				"description": "Get JWT token for the API calls"
+			},
+			"response": []
+		}
+	]
+}
